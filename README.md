@@ -1,8 +1,6 @@
 # poly-A-seq
 
-These codes were written to analyze poly(A) seq. 
-
-This folder contain all the scripts used in the our paper (Zhou et al Elife 2018).
+These codes were written to analyze PCPA (prematural cleavage and polyadenylation) at the 3' UTR, intron and CDS.  
 
 ## Before start
 **1, download softwares for alignment, i.e. bowtie2 and tophat2.**
