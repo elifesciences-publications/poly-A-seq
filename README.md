@@ -52,5 +52,5 @@ perl step9_PSSM.pl
 
 
 Please direct all your questions to Yunkun Dang (email: yunkun_dang@126.com)
-Physical address:
-Center of Life Science, College of Biological Sciences, Yunnan University, Kunming, Yunnan, China. 
+
+Physical address: Center of Life Science, College of Biological Sciences, Yunnan University, Kunming, Yunnan, China. 
