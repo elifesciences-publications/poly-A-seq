@@ -1,29 +1,22 @@
 use strict;
 use warnings;
 
-# Feb 14, 2017
+# Feb 5, 2018
 # Yunkun Dang
 
-# Method: 3P-seq, by Bartel Lab
-# unlike Bin Tian's method, no 4 random nucleotides before T stretch
-# trim the PASS reads based on Bin Tian's Nature Method 2013.
-# set the minimum length of T as 1.
-## the sequence is reversed. 
 
-
-# set minimum number of T
+# set minimum number of A
 my $min=10;
-# set minimum length
+# set minimum length of reads after trimming poly(A) stretch
 my $size = 20;
 
 =head1
-  These sample were done with 2P-seq. However, due to the mistake of using forward primer as sequencing primer, the result shows the sequence as XXXXAAAAAAAA...., so the method will be very different with other 2P seq protocol for analyses. 
-
-Date = April 26, 1017
-
+IMPORTANT: These sample were done with 2P-seq. However, due to the mistake of using forward primer as sequencing primer, the result shows the sequence as XXXXAAAAAAAA...., so the method for trimming will be very different with other 2P seq protocol for analyses. 
 =cut
- 
-my @sample = ("CHX_1", "CHX_2", "Nuc_1", "Nuc_2", "Total_1", "Total_2");
+
+
+# sample name here
+my @sample = ("Nuc_1", "Nuc_2", "Total_1", "Total_2");
 
 
 foreach my $id (@sample)   {
@@ -79,10 +72,11 @@ close hand1; close hand2; close hand3;
 open (hand1,"$sam/$sam.txt");
 my %uni=(); $count=0; my %sta=(); my %siz=(); my $number=0;
 while (<hand1>)            {
-$_ =~ s/\s+$//; $count++;
-$uni{$_}++;
-$sta{substr($_,0,1)}++;
-$siz{length($_)}++;        }
+	$_ =~ s/\s+$//; $count++;
+	$uni{$_}++;
+	$sta{substr($_,0,1)}++;
+	$siz{length($_)}++;       
+	}
 $number=scalar keys %uni;
 close hand1;
 unlink "$sam/$sam.txt";
@@ -91,8 +85,9 @@ unlink "$sam/$sam.txt";
 $id=10000000;
 open (hand1,">$sam/$sam\_$min\_uni.txt");
 foreach my $seq (sort {$uni{$b}<=>$uni{$a}} keys %uni)  {
-$id++;
-print hand1 ">$id\_x$uni{$seq}\n$seq\n";                }
+	$id++;
+	print hand1 ">$id\_x$uni{$seq}\n$seq\n";   
+	}
 close hand1; %uni=(); 
 
 open (hand1,">$sam/sum\_$sam.txt");
@@ -103,11 +98,12 @@ close hand1;
 open (hand1,">>$sam/sum\_$sam.txt");
 print hand1 "\nstart:\n";
 foreach my $st (keys %sta)           {
-print hand1 $st,"\t",$sta{$st},"\n"; }
+	print hand1 $st,"\t",$sta{$st},"\n"; }
 %sta=();
 
 print hand1 "\nsize:\n";
 foreach my $si (sort {$a<=>$b} keys %siz)   {
-print hand1 $si,"\t",$siz{$si},"\n";        }
+	print hand1 $si,"\t",$siz{$si},"\n";        }
 
-close hand1; %siz=(); %sta=();                                   }
+close hand1; %siz=(); %sta=();              
+}
