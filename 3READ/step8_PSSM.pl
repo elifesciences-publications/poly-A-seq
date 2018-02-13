@@ -40,6 +40,7 @@ foreach (keys %bkg_nuc)  {
 
 print Dumper(\%bkg_nuc);
 
+#put your sample name here
 my @sample = ("SRR2225336", "SRR2225337", "SRR2225338", "SRR2225339",
            "SRR2225340", "SRR2225341", "SRR2225342", "SRR2225343", 
            "SRR2225344", "SRR2225345", "SRR2225346", "SRR2225347", 
