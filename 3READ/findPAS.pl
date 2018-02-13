@@ -7,7 +7,6 @@ use List::MoreUtils qw(uniq);
 use Math::CDF qw(pbinom);
 #use Number::Format qw(round);
 use Getopt::Long;
-#use Cwd 'abs_path';
 use Data::Dumper;
 
 my ($start,$end,$file_in,$file_out,$Pval,$R);
