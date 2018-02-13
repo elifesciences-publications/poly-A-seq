@@ -14,7 +14,7 @@ species="mouse_mm10"
 
 
 
-for input in "SRR2225336" "SRR2225337" "SRR2225338" "SRR2225339" "SRR2225340" "SRR2225341" "SRR2225342" "SRR2225343" "SRR2225344" "SRR2225345" "SRR2225346" "SRR2225347" "SRR2225348" "SRR2225349" "SRR2225350" "SRR2225351"
+for input in "SRR2225336" "SRR2225337" "SRR2225342" "SRR2225343"
 
 do 
 
@@ -35,8 +35,6 @@ samtools index accepted_hits.bam
 # remove the reads that has multiple targets
 samtools view -bq 1 accepted_hits.bam > $input\_uniq.bam
 
-#samtools view -BS $input/thout/accepted_hits.bam | grep -E "@|NM:" | grep -v "XS:" > $input/thout/unique_mapper.sam
-
 # create bed files
 bedtools bamtobed -bed12 -i $input\_uniq.bam > $input\_uniq.bed
 
@@ -44,7 +42,7 @@ cd ..
 
 cd ..
 
-	done
+done
 
 
 
