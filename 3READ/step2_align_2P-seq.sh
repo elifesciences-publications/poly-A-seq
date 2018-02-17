@@ -28,14 +28,11 @@ tophat2 -p 8 -G ~/Deepseq/NC10_transcripts.gff3 -o $input/thout --library-type=f
 
 
 #echo "$input alignment finished"
-cd $input
-cd thout
-#samtools index accepted_hits.bam
+cd $input/thout
 
 # remove the reads that has multiple targets
 samtools view -bq 1 accepted_hits.bam > $input\_uniq.bam
 samtools index $input\_uniq.bam
-#samtools view -BS $input/thout/accepted_hits.bam | grep -E "@|NM:" | grep -v "XS:" > $input/thout/unique_mapper.sam
 
 # create bed files
 bedtools bamtobed -bed12 -i $input\_uniq.bam > $input\_uniq.bed
