@@ -2,7 +2,7 @@
 
 These codes were written to analyze PCPA (prematural cleavage and polyadenylation) at the 3' UTR, intron and CDS. 
 For details of the analyses, please refer to our paper.
-The use of arguments were written in the each scripts and our paper. Please read carefully before use.
+The use of arguments were written in the each scripts and can be changed for your need. To replicate the results in our publication, please use the settings described in our paper.  
 
 ## Before start
 **1, download softwares for alignment, i.e. bowtie2 and tophat2.**
