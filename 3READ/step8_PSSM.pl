@@ -6,8 +6,8 @@ use strict;
 use Data::Dumper;
 
 my ($start, $end, $species);
-$start = 0;
-$end = 15; 
+$start = -30;
+$end = 10; 
 $species = "mouse_mm10";
 
 
