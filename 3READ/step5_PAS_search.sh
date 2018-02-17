@@ -15,12 +15,12 @@ for sam in  "SRR2225336" "SRR2225337" "SRR2225338" "SRR2225339" "SRR2225340" "SR
 	# sort the bed file and merge into clusters with ones that within 24nt distance.
 	# also count the frequency of peaks
 	echo "\t## sorting bed files"
-	#sort -k1,1 -k2,2n thout/$sam\_filtered_pos.bed > thout/$sam\_filtered_pos_sorted.bed
+	sort -k1,1 -k2,2n thout/$sam\_filtered_pos.bed > thout/$sam\_filtered_pos_sorted.bed
 	
 	## -c the column number that is used for operation (-o), here the column number is started
 	## from 1, not 0
 	echo "\t## merge reads into region"
-	#bedtools merge -i thout/$sam\_filtered_pos_sorted.bed -s -d 24 -c 4 -o count > merged_pos.bed
+	bedtools merge -i thout/$sam\_filtered_pos_sorted.bed -s -d 24 -c 4 -o count > merged_pos.bed
 
 	cd ..
 
@@ -39,6 +39,6 @@ for sam in  "SRR2225336" "SRR2225337" "SRR2225338" "SRR2225339" "SRR2225340" "SR
 
 	echo "\t## running R scripts to draw graphs"
 	Rscript plot_polyA.R $sam mouse $st $ed
-	# species: the so-called RNA seq data. 
+	
 	done 
 
