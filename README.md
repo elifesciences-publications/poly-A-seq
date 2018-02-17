@@ -5,7 +5,9 @@ For details of the analyses, please refer to our paper.
 The use of arguments were written in the each scripts and can be changed for your need. To replicate the results in our publication, please use the settings described in our paper.  
 
 ## Before start
-**1, download softwares for alignment, i.e. bowtie2 and tophat2.**
+** require Perl(5.22) and R(3.4.0) or above**
+
+**1, download and install bowtie2, tophat2, SAMTOOLS, BEDTools.**
 
 **2, create the reference files (ORF sequences, CAI and CBI values).** 
 
@@ -52,7 +54,7 @@ execute the following script to calculate the PAS scores based on PSSM
 perl step9_PSSM.pl
 ```
 
-
+**NOTE: need to install required modules or packages for Perl and R**
 Please direct all your questions to Yunkun Dang (email: yunkun_dang@126.com)
 
 Physical address: Center of Life Science, College of Biological Sciences, Yunnan University, Kunming, Yunnan, China. 
