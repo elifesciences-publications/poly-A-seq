@@ -15,12 +15,6 @@ require(reshape2) # use to convert data.frame from wide to long
 #detach(package:reshape2)
 
 dir.create("AT_count")
-# this part is for testing
-# setwd("~/Desktop/ZP_polyA/2P-seq/")
-# arg = "NC10"
-# sam = "CHX_1"
-# file1 = paste("ref/", arg, "_CBI_CAIavg.txt", sep = "")
-## end of test ===================================
 
 # open CBI reference
 file1 = paste("ref/", args[2], "_CBI_CAIavg.txt", sep = "")
@@ -38,21 +32,15 @@ cor.graph = function(sam)    {
   df$rpm = df$UTR_counts*1000000/sum(df$UTR_counts)
   df$cds_dens = log10(df$CDS_counts*1000/df$CDS_size+1)
   df$intron_dens = log10(df$intron_counts*1000/df$CDS_intron_size+1)
-  
-  #hist(log2(df$rpm), breaks = 100)
-  #hist(log2(df$UTR_counts))
+
   df = df[df$rpm > 10,]
   df = na.omit(df)
   
   setEPS()
   postscript(paste(sam, "/", sam, " CBI vs ratio dotplot.eps", sep=""), pointsize = 8, width = 8, height = 6)
   
-  #jpeg(filename = paste(sam, "/", sam, " CBI vs ratio dotplot.jpeg", sep=""),
-  # width = 700, height = 750, units = "px", quality = 100)
-  
-  #df$ratio = format(df$ratio, scientific = F)
   par(mfrow=c(2,3))
-  # look at one > 0
+
   cor1 = cor.test(df$CBI[df$ratio>0], log10(df$ratio[df$ratio>0]))
   cor2 = cor.test(df$CBI[df$UTR_counts > 0], log10(df$UTR_counts[df$UTR_counts > 0]))
   cor3 = cor.test(df$GC[df$ratio>0], log10(df$ratio_norm[df$ratio_norm>0]))
