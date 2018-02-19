@@ -86,8 +86,7 @@ draw.lines = function (sam, pos)    {
   
   p+xlab('position')+ylab('base frequency')+
     ggtitle(paste(sam, pos, "false vs true PAS AT content"))+ylim(c(0,1))
-  #scale_x_continuous(breaks = seq(-(ncol(dt1)-6)/2, (ncol(dt1)-1)/2, by = 10))+
-  #scale_y_continuous(breaks = seq(0,1,0.25))
+
   
   ggsave(filename = paste(sam,"/classify/AT_", pos, "_true vs false.eps",sep = ""), plot = last_plot(), device = "eps",
          width = 10, height = 4, units = "in", dpi = 300)
@@ -126,9 +125,6 @@ pas.heatmap = function(sam, up, dn, st, ed, out)  {
   rpm = read.table(paste(sam, "/CDS_UTR_PolyA_counts.txt", sep = ""), sep = "\t", header = T)
   rpm = rpm[,1:3]
   cf = merge(rpm, cf, by.x = "Gene", by.y = "V2")
-  #cf$ratio = cf$CDS_counts*100/cf$UTR_counts
-  #df = cf[cf$V3 >= 5 & cf$ratio > 0.1 & cf$ratio < 100, ]
-  #df = cf[cf$V3 > 1,]
   df = cf
   
   #make a table to compare the composition of codons 
