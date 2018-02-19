@@ -1,4 +1,4 @@
-setwd("~/Desktop/ZP_polyA/Ncrassa_v10/ref")
+
 
 df = read.table("codon_frequency.txt", sep = "\t", header = F )
 
@@ -28,7 +28,7 @@ names(df) = c("AA", "codon", "CAI", "rand")
 write.table(df, "CBI_ref.txt", sep = "\t", row.names = F, quote = F)
 
 ## --------------------------------
-## this part for CBI from codonw
+## this part for calculation of CBI
 ## --------------------------------
 
 df = read.table("ref/NC10_CBI_CAIavg.txt", sep = "\t", header = T)
@@ -44,10 +44,6 @@ df = df[,-5]
 names(df)[5] = "CBI"
 
 write.table(df, "ref/NC10_CBI_CAIavg.txt", sep = "\t",row.names = F)
-
-cor.test(df$CBI, df$V7)
-
-plot(df$CBI, df$V7)
 
 
 
