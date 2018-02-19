@@ -2,8 +2,8 @@
 use strict;
 
 =head1 The Methodology to anthenticate the real PAS reads
-Author: Yunkun 
-date: May 5, 2017
+Author: Yunkun Dang
+date: Dec 5, 2017
 
 Only apply for this specific case. i.e. primed with XXXT12VN primer (2P seq) and sequence 
 the reads from 5' end (universal primer)
@@ -121,15 +121,3 @@ print "filtered $std strand reads (total = $total) from $sam = $count; from bed 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-		
