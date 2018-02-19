@@ -27,9 +27,6 @@ if ($sam eq "" or $genome eq "" or $refflat eq "") {
 	use of script:
 	perl findPAS.pl -s <sample_name> -g <path to genome fasta file ) -ref <refflat file>\n"} # check parameters
 
-#$file_in =~ s/^.+\///g;
-#$refflat =~ s/^.+\///g;
-
 # read file from wig
 my %plus; my %minus;
 open (hand1, "$sam/thout/pos_plus.bedgraph") or die $!;
@@ -174,8 +171,6 @@ while (<REF>)   {
 					$pas_st = $i+10;
 					$pas_end = $i+30;}
 				
-				# not good for this: if ( grep( /^$pas_st$/, @cds) and grep( /^$pas_end$/, @cds) )  {
-				# use list::compare (intersection)
 				my @pas = $pas_st..$pas_end;
 				my $lc1 = List::Compare->new(\@cds, \@pas);
 				my @intersect = $lc1->get_intersection;
@@ -268,10 +263,8 @@ while (<REF>)   {
 	## method1, use reduce from List::Utils
 	my $k1 = reduce { $peak_utr{$a} > $peak_utr{$b} ? $a : $b } keys %peak_utr;
 	my $v1 = max values %peak_utr;
+
 	## key based on the second highest value (NOTE: the position of $b and $a decided descending or ascending order
-	#my $k2 = (sort { $peak_utr{$b} <=> $peak_utr{$a} } keys %peak_utr)[1];
-	#print "p$k1=$v1; p$k2=$v2\n";
-	
 	my $seq = getSeq($a[2], $k1, $a[3], \%genome);
 	for my $i (0..length($seq)-1)  {
 		my $base = substr($seq, $i, 1);
