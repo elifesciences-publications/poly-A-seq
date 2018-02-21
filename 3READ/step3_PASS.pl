@@ -4,7 +4,11 @@ use strict;
 
 
 my $ch; my %genome;
-open (hand1, "/home/yunkun/genomes/mouse_mm10/Sequence/WholeGenomeFasta/genome.fa") or die $!;
+
+### put the path and name of your genome fasta data. must including all chromosomes in one file. 
+open (hand1, "~/genomes/mouse_mm10/Sequence/WholeGenomeFasta/genome.fa") or die $!;
+
+
 while (<hand1>)   {
 	$_=~ s/\s+$//;
     if (/^>/)       {
@@ -15,7 +19,7 @@ while (<hand1>)   {
 
 close hand1;
 
-
+### put your sample name here, quote every name and seperate with comma. sample name are the same as used in step1
 my @sample = ("SRR2225336", "SRR2225337", "SRR2225338", "SRR2225339", "SRR2225340", "SRR2225341", "SRR2225342", "SRR2225343", "SRR2225344", "SRR2225345", "SRR2225346", "SRR2225347", "SRR2225348", "SRR2225349", "SRR2225350", "SRR2225351");
 
 foreach my $id (@sample)   {
