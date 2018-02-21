@@ -17,8 +17,10 @@ open the script _sequence_bu_refFlat.pl_, make sure to give it the right path to
 ```
 perl sequence_by_refFlat.pl 
 ```
-Then put script _CBI_ref_define.R_ and _cal_CBIAvg.pl_ inside the *ref* folder. excute the R scripts in Rstudio and Perl in terminal as showed above
+Then put script _CBI_ref_define.R_ and _cal_CBIAvg.pl_ inside the *ref* folder. excute the R scripts in Rstudio and Perl in terminal as showed above to create CAI and CBI reference file.
 *Note*: install necessary module for R and Perl used in the codes. 
+For R: ggplot2 reshape2
+For Perl: List::MoreUtil List::Compare Math::CDF
 
 **3, download rest scripts and place them in the folder that contains your fastq file. **
 
@@ -33,18 +35,19 @@ sh step4_position.sh
 The above codes were written for **3READ** sequencing method. If **2P-seq** are used, please use the codes
 followed by *\_2P-seq.pl 
 ## step5
+This step will create 
 change the file name inside the shell script and run, which should produce figures and files in subfolders
 ```
 sh step5_PAS_search.pl
 ```
 ## step6
-excute as following to analyze dicodon frequencies
+open the shell script and change the file names accordingly. Then excute as following to analyze dicodon frequencies
 ```
 sh step6_PAS_dicodon.sh
 ```
 then execute _step6_PAS_dicodon.R_ in Rstudio software.
 ## step7
-simply execute the shell script
+Open and change the file name accordingly. Then simply execute the shell script, which will produce the figures 
 ```
 sh step7_PAS_prediction.sh
 ```
