@@ -68,17 +68,11 @@ cor.graph = function(sam)    {
                                                        cor3$parameter, "\n P=", formatC(cor3$p.value, digits = 3)))
   
   plot(df$avg_CAI[df$ratio_norm>0], df$ratio_norm[df$ratio_norm>0], pch=16, col="blue", cex=0.5, main= paste(sam, "dotplot"),
-       xlab="average CAI ", ylab="polyA normalized internal (by CDS size) to UTR signal ratio", log = "y")
+       xlab="CAI ", ylab="polyA normalized internal (by CDS size) to UTR signal ratio", log = "y")
   abline(lm(log10(df$ratio_norm[df$ratio_norm>0])~df$avg_CAI[df$ratio_norm>0]), lty = 2, lwd = 2, col = "grey50")
   text(min(df$avg_CAI)*1.15, max(df$ratio_norm)*0.15, paste(" r =", round(cor4$estimate, 3), "\n n =", 
                                                             cor4$parameter, "\n P=", formatC(cor4$p.value, digits = 3)))
-  
-  plot(df$rpm[df$ratio_norm>0], df$ratio_norm[df$ratio_norm>0], pch=16, col="red", cex=0.5, main= paste(sam, "RPM to CDS cleavage ratio"),
-       xlab="Gene expression (RPM)", ylab="normalized polyA internal to UTR signal ratio", log = "xy")
-  abline(lm(log10(df$ratio_norm[df$ratio_norm>0])~log10(df$rpm[df$ratio_norm>0])), lty = 2, lwd = 2, col = "grey50")
-  text(max(df$rpm[df$ratio_norm>0])*0.1, max(df$ratio_norm[df$ratio_norm>0])*0.15, paste(" r =", round(cor5$estimate, 3), "\n n =", 
-                                                                                         cor5$parameter, "\n P=", formatC(cor5$p.value, digits = 3)))
-  
+ 
   plot(df$GC[df$rpm>0], df$rpm[df$rpm>1], pch=16, col="chartreuse3", cex=0.5, main= paste(sam, "RPM to CDS cleavage ratio"),
        xlab="gene ORF GC%", ylab="3' UTR counts", log = "y")
   abline(lm(log10(df$rpm[df$rpm>0])~df$GC[df$rpm>0]), lty = 2, lwd = 2, col = "grey50")
