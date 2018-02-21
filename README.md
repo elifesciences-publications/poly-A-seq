@@ -9,11 +9,14 @@ The use of arguments were written in the each scripts and can be changed for you
 **require Perl(5.22) and R(3.4.0) or above**
 
 **1, download and install bowtie2, tophat2, SAMTOOLS, BEDTools.**
+make sure the installed softwares are in your PATH.
 
 **2, create the reference files (ORF sequences, CAI and CBI values).** 
 
 Please go to iGenome (Illumnia) or other sources to download your desired genomic references, including genome fasta file, GTF and refFlat.
+
 *use the perl script to create ORF reference sequences.*
+
 open the script _sequence_bu_refFlat.pl_, make sure to give it the right path to access reference files. The run the code in termial
 ```
 perl sequence_by_refFlat.pl 
