@@ -11,11 +11,13 @@ my $min=10;
 my $size = 20;
 
 =head1
-IMPORTANT: These sample were done with 2P-seq. However, due to the mistake of using forward primer as sequencing primer, the result shows the sequence as XXXXAAAAAAAA...., so the method for trimming will be very different with other 2P seq protocol for analyses. 
+IMPORTANT: 
+These sample were done with 2P-seq. However, due to the mistake of using forward primer as sequencing primer, the result shows the sequence as XXXXAAAAAAAA...., so the method for trimming will be very different with other 2P seq protocol for analyses. 
+Put your fastq files into a folder named "fq" 
 =cut
 
 
-# sample name here
+# sample name here. THe file name will be, for example, Nuc_1.fastq)
 my @sample = ("Nuc_1", "Nuc_2", "Total_1", "Total_2");
 
 
