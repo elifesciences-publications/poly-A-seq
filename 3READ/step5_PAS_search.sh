@@ -1,6 +1,6 @@
 #!bin/sh
 
-
+# DEFINE the region where PAS motifs are supposed to locate. typically -30 to -10 upstream of cleavage site (pA site)
 st="-30"
 ed="-10"
 
@@ -26,7 +26,7 @@ for sam in  "SRR2225336" "SRR2225337" "SRR2225338" "SRR2225339" "SRR2225340" "SR
 
 	## the following scripts are for searching peaks and motifs
 	echo "\t## searching peaks at UTR and CDS with perl script" 
-	perl find_summit_peak.pl -s $sam -g /home/yunkun/genomes/$species/Sequence/WholeGenomeFasta/genome.fa -ref /home/yunkun/genomes/$species/Genes/refFlat.txt
+	perl find_summit_peak.pl -s $sam -g <PATH_to_genome_fasta_file> -ref <PATH_to_refFlat_file>
 	
 	echo "\t## searching PAS signal in UTR"
 	perl findPAS.pl -in $sam/polyA_UTR3.txt -start $st -end $ed
@@ -38,7 +38,7 @@ for sam in  "SRR2225336" "SRR2225337" "SRR2225338" "SRR2225339" "SRR2225340" "SR
 	perl findPAS.pl -in $sam/polyA_CDS_intron.txt -start $st -end $ed
 
 	echo "\t## running R scripts to draw graphs"
-	Rscript plot_polyA.R $sam mouse $st $ed
+	Rscript plot_polyA.R $sam <name_of_CAI_CBI_reference> $st $ed
 	
 	done 
 
