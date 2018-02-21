@@ -2,6 +2,9 @@
 use List::MoreUtils qw(uniq);
 use strict;
 
+# Author: Yunkun Dang
+# Updated on Feb 18, 2018
+
 
 my $ch; my %genome;
 
