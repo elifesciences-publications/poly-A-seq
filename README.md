@@ -1,4 +1,4 @@
-# poly-A-seq
+# poly(A)-seq pipeline
 
 These codes were written to analyze PCPA (prematural cleavage and polyadenylation) at the 3' UTR, intron and CDS. 
 For details of the analyses, please refer to our paper.
