@@ -3,7 +3,7 @@ use strict;
 
 =head1 The Methodology to anthenticate the real PAS reads
 Author: Yunkun 
-date: Feb 15, 2017
+date: Feb 15, 2018
 
 Based on the previous analyses, we know each reads has 1-n A tailing the read,
 so after the mapping we are looking back the A tail and check whether these tails 
@@ -11,10 +11,14 @@ are really untemplate A or just simply came from sequnces contain A at the 3' en
 
 =cut
 
-#my $species = "mouse_mm10";
+#my $species = "NC10";
 
 my $ch; my %genome;
-open (hand1, "/home/yunkun/Deepseq/Indexes/NC12mt.fa") or die $!;
+
+# reference genomic sequence data here.
+open (hand1, "/home/yunkun/Deepseq/Indexes/NC10.fa") or die $!;
+
+
 while (<hand1>)   {
 	$_=~ s/\s+$//;
     if (/^>/)       {
@@ -25,7 +29,7 @@ while (<hand1>)   {
 
 close hand1;
 
-
+# sample name here. should be the same as used in step1
 my @sample = ("CHX_1", "CHX_2", "Nuc_1", "Nuc_2", "Total_1", "Total_2");
 
 foreach my $id (@sample)   {
