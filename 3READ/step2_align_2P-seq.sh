@@ -1,8 +1,6 @@
 #!/bin/sh
 
 
-### created and update on 04-15-2014 by Yunkun as a ribosomal profiling pipeline
-
 
 # Print start status message.
 echo "job started"
@@ -10,11 +8,8 @@ start_time=`date +%s`
 
 species="NC_12"
 
-#defile your file name (in shell, define variables do not use $)
 
-
-
-for input in "CHX_1" "CHX_2" "Nuc_1" "Nuc_2" "Total_1" "Total_2"
+for input in "CHX_1" "CHX_2" "Nuc_1" "Nuc_2"
 
 do 
 
