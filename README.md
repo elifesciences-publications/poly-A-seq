@@ -73,7 +73,7 @@ perl step8_PSSM.pl
 ```
 To make the boxplot, simly use the built-in function "boxplot" in R. 
 
-
+***
 Please direct all your questions to Yunkun Dang (email: yunkun_dang@126.com)
 
 Physical address: Center for Life Science, College of Biological Sciences, Yunnan University, Kunming, Yunnan, China. 
