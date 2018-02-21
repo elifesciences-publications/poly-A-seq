@@ -15,7 +15,6 @@ The way to do this is
 	
 =cut
 
-#my $species = "mouse_mm10";
 
 
 use Getopt::Long;
@@ -37,7 +36,7 @@ GetOptions
 print "============processing $sam =============\n";
 
 my $ch; my %genome;
-open (hand1, "/home/yunkun/genomes/$species/Sequences/WholeGenomeFasta/genome.fa") or die $!;
+open (hand1, "~/genomes/$species/Sequences/WholeGenomeFasta/genome.fa") or die $!;
 while (<hand1>)   {
 	$_=~ s/\s+$//;
     if (/^>/)       {
