@@ -3,7 +3,7 @@
 These codes were written to analyze PCPA (prematural cleavage and polyadenylation) at the 3' UTR, intron and CDS. 
 For details of the analyses, please refer to our paper titled "Codon usage biases co-evolve with the transcription termination machinery to suppress premature cleavage and polyadenylation in coding regions".
 
-The use of arguments were written in the each scripts and can be changed for your need. To replicate the results in our publication, please use the settings described in "Materials and Methods".  
+The use of arguments were written in the each scripts and can be changed for your need. To replicate the results in our publication, please use the settings described in "Materials and Methods", if settings in scripts are different.  
 
 ## Before start
 **require Perl(5.22) and R(3.4.0) or above**
