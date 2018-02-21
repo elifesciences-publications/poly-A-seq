@@ -9,6 +9,7 @@ The use of arguments were written in the each scripts and can be changed for you
 **require Perl(5.22) and R(3.4.0) or above**
 
 **1, download and install bowtie2, tophat2, SAMTOOLS, BEDTools.**
+
 make sure the installed softwares are in your PATH.
 
 **2, create the reference files (ORF sequences, CAI and CBI values).** 
@@ -29,7 +30,7 @@ For R: **ggplot2 reshape2**
 
 For Perl: **List::MoreUtil List::Compare Math::CDF** 
 
-**3, download rest scripts and place them in the folder that contains your fastq file. **
+**3, put all your fastq files in a folder named "fq". Then download all scripts from "3READ" folder and place them outside the "fq" folder**
 
 ## step1 to step4， processing reads and mapping.  
 change the file name according inside the scripts (Shell or Perl), with a text editor. Then execute these code as below:
