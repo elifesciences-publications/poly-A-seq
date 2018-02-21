@@ -22,6 +22,7 @@ Then put script _CBI_ref_define.R_ and _cal_CBIAvg.pl_ inside the *ref* folder. 
 **Note**: install necessary module for R and Perl used in the codes
 
 For R: **ggplot2 reshape2**
+
 For Perl: **List::MoreUtil List::Compare Math::CDF** 
 
 **3, download rest scripts and place them in the folder that contains your fastq file. **
