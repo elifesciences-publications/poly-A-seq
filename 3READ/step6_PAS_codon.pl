@@ -1,14 +1,14 @@
-#!/usr/bin/perl
-use List::Util qw(reduce max);
-use List::MoreUtils qw(uniq);
+#!/usr/bin/perl -w
+#use List::Util qw(reduce max);
+#use List::MoreUtils qw(uniq);
 use strict;
 use Getopt::Long;
-use List::Compare;
-use Bio::Util::codonUsage qw(translate);
+#use List::Compare;
+#use Bio::Util::codonUsage qw(translate);
 
 =head1
-Date=August 10, 2017
-
+First created: August 10, 2017
+Author = Yunkun Dang
 purpose: 
 looking for peaks (i.e. cleavage site) that are locationed inside the coding regions (ORF). Find out the upstream region (default is 30 to 10 upstream of cleavage site), report the codons inside in these regions. Note that the selected upstream region must be inside the coding region. Meanwhile, also randomly pick a site within selected genes (i.e. the same genes that have the internal cleavage sites) and report the sequences of codons. 
 
