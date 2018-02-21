@@ -18,7 +18,9 @@ open the script _sequence_bu_refFlat.pl_, make sure to give it the right path to
 perl sequence_by_refFlat.pl 
 ```
 Then put script _CBI_ref_define.R_ and _cal_CBIAvg.pl_ inside the *ref* folder. excute the R scripts in Rstudio and Perl in terminal as showed above to create CAI and CBI reference file.
+
 **Note**: install necessary module for R and Perl used in the codes
+
 For R: **ggplot2 reshape2**
 For Perl: **List::MoreUtil List::Compare Math::CDF** 
 
