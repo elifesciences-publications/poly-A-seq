@@ -5,7 +5,7 @@ For details of the analyses, please refer to our paper.
 The use of arguments were written in the each scripts and can be changed for your need. To replicate the results in our publication, please use the settings described in our paper.  
 
 ## Before start
-** require Perl(5.22) and R(3.4.0) or above**
+**require Perl(5.22) and R(3.4.0) or above**
 
 **1, download and install bowtie2, tophat2, SAMTOOLS, BEDTools.**
 
@@ -32,32 +32,39 @@ sh step2_align.sh
 perl step3_PASS.pl
 sh step4_position.sh
 ```
-The above codes were written for **3READ** sequencing method. If **2P-seq** are used, please use the codes
+The above codes were written for **3READS** sequencing method. If **2P-seq** are used, please use the codes
 followed by *\_2P-seq.pl 
 ## step5
-This step will create 
-change the file name inside the shell script and run, which should produce figures and files in subfolders
+This step will create:
+1. scatter plots of CBI/CAI to normalized ORF/3'UTR termination ratio
+2. line plots showing the GC content flanking the pA sites within ORFs or 3' UTRs
+HOW TO USE: change the file name inside the shell script and run, which should produce figures and files in subfolders
 ```
 sh step5_PAS_search.pl
 ```
 ## step6
-open the shell script and change the file names accordingly. Then excute as following to analyze dicodon frequencies
+This step will create: codon and dicodon frequency around the putative PAS region.  
+HOW TO USE: open the shell script and change the file names accordingly. Then excute as following to analyze codon and codon frequencies
 ```
 sh step6_PAS_dicodon.sh
 ```
 then execute _step6_PAS_dicodon.R_ in Rstudio software.
 ## step7
-Open and change the file name accordingly. Then simply execute the shell script, which will produce the figures 
+This step will create: 
+1.The line plot of AU content flanking selected 6nt PAS motifs.
+2. relative codon refrequency flanking the PAS motifs. 
+HOW TO USE: Open and change the file name accordingly. Then simply execute the shell script, which will produce the figures 
 ```
 sh step7_PAS_prediction.sh
 ```
 ## step8
+This step will create the PSSM scores for PAS region of 3'UTR and ORF regions. 
 execute the following script to calculate the PAS scores based on PSSM
 ```
-perl step9_PSSM.pl
+perl step8_PSSM.pl
 ```
+To make the boxplot, simly use the built-in function "boxplot" in R. 
 
-**NOTE: need to install required modules or packages for Perl and R**
 
 Please direct all your questions to Yunkun Dang (email: yunkun_dang@126.com)
 
