@@ -4,7 +4,7 @@
 
 start = 1
 end = 5
-# 1 to 5 means position of dicodons from -30 to 0 region. which will have 10 codons upstream of cleavage
+# 1 to 5 means position of dicodons from about -30 to -10 region. which will have 10 codons upstream of cleavage
 # 1 to 5 approximately represent the region where PAS motif located.
 
 
@@ -143,8 +143,10 @@ pas.diCod = function(sam, out="jpeg")  {
 }
 
 
-# mouse
-setwd("~/Desktop/ZP_polyA/mouse")
+
+setwd("<your working directory>")  
+
+#sample name should be the same as your used in previous step, from step1 to now
 sample = c("SRR2225336", "SRR2225337", "SRR2225338", "SRR2225339",
            "SRR2225340", "SRR2225341", "SRR2225342", "SRR2225343", 
            "SRR2225344", "SRR2225345", "SRR2225346", "SRR2225347", 
