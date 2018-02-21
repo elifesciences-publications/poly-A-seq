@@ -1,7 +1,7 @@
 use strict;
 use warnings;
 
-# Feb 14, 2017
+# June 14, 2017
 # Yunkun Dang
 
 
@@ -13,11 +13,16 @@ use warnings;
 
 # set minimum number of T
 my $min=1;
-# set minimum length
+# set minimum length of reads. after trimming, any reads shorter than this will be omitted
 my $size = 20;
 
+# put the name of your fastq files in this array. For example, the full file name is SRR123456.fastq, then place SRR123456 in the array. The example is as below. 
+my @sample = ("SRR2225336", "SRR2225337", "SRR2225342", "SRR2225343");
 
-my @sample = ("SRR2225336", "SRR2225337", "SRR2225338", "SRR2225339", "SRR2225340", "SRR2225341", "SRR2225342", "SRR2225343", "SRR2225344", "SRR2225345", "SRR2225346", "SRR2225347", "SRR2225348", "SRR2225349", "SRR2225350", "SRR2225351");
+
+####=================================================================================================
+## this part is for execution
+####=================================================================================================
 
 foreach my $id (@sample)   {
 	print "processing $id now\n\n";
