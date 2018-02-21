@@ -6,17 +6,18 @@ for sam in "Nuc_1" "Nuc_2" "Total_1" "Total_2"
 
 do 
 
-# need to create a chrom file 
+# need to create a chrom file, see BEDTools suite (genomecov) for more details.
 
 echo "===========processing $sam===========\n"
-bedtools genomecov -i $sam/thout/$sam\_filtered_pos.bed -bg -g /home/yunkun/genomes/$species/Sequences/WholeGenomeFasta/genome.chrom -strand + > $sam/thout/pos_plus_p.bedgraph
+bedtools genomecov -i $sam/thout/$sam\_filtered_pos.bed -bg -g <chrom.file> -strand + > $sam/thout/pos_plus_p.bedgraph
 
-bedtools genomecov -i $sam/thout/$sam\_filtered_pos.bed -bg -g /home/yunkun/genomes/$species/Sequences/WholeGenomeFasta/genome.chrom -strand - > $sam/thout/pos_neg_p.bedgraph
+bedtools genomecov -i $sam/thout/$sam\_filtered_pos.bed -bg -g <chrom.file> -strand - > $sam/thout/pos_neg_p.bedgraph
 
 # use bedgraph data as reference to justify which one is good or bad. Critiria: 
 # 1, look at the 20nt sequence downstream of cleavage site. if AAAAAA or pattern like A{3,}.A{2,}.A{2,}, then remove it
 # 2, if within a 12nt window within that 20nt region, more than 8A were found, then remove
 
+# please check the PAS_filter.pl file and change the path and name of your genomic data (fasta). 
 perl PAS_filter.pl -s $sam -strand n -species $species
 
 perl PAS_filter.pl -s $sam -strand p -species $species
