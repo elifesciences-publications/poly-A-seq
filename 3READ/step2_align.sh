@@ -1,7 +1,7 @@
 #!/bin/sh
 
 
-### created and update on 04-15-2014 by Yunkun as a ribosomal profiling pipeline
+### This code is just use for batch processing.
 
 
 # Print start status message.
@@ -10,17 +10,15 @@ start_time=`date +%s`
 
 species="mouse_mm10"
 
-#defile your file name (in shell, define variables do not use $)
 
-
-
+# put your sample name (same as used in step1) after "in", quote the names and seperate with space
 for input in "SRR2225336" "SRR2225337" "SRR2225342" "SRR2225343"
 
 do 
 
 mkdir $input
 
-tophat2 -p 8 -G ~/genomes/$species/Genes/genes.gtf -o $input/thout --library-type=fr-secondstrand ~/genomes/$species/Sequence/Bowtie2Index/genome fq/$input\_A_1.fq
+tophat2 -p 8 -G <location of GTF file> -o $input/thout --library-type=fr-secondstrand <name and location of Bowtie2 index> fq/$input\_A_1.fq
 
 # secondstrand use for ligation. The fq data has been reverse complemented
 # strand information:  fr-firststrand	dUTP, NSR, NNSR	Same as above except we enforce the rule that the right-most end of the fragment (in transcript coordinates) is the first sequenced (or only sequenced for single-end reads). Equivalently, it is assumed that only the strand generated during first strand synthesis is sequenced.
