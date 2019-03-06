@@ -1,3 +1,7 @@
+
+
+### This code is associated with the paper from Zhou et al., "Codon usage biases co-evolve with transcription termination machinery to suppress premature cleavage and polyadenylation". eLife, 2018. http://dx.doi.org/10.7554/eLife.33569
+
 # poly(A)-seq pipeline
 
 These codes were written to analyze PCPA (prematural cleavage and polyadenylation) at the 3' UTR, intron and CDS. 
